@@ -501,12 +501,12 @@
             </div>
         </div>
     </section>
-
-    <footer id="contact" class="py-24 relative text-center">
+<footer id="contact" class="py-24 relative text-center">
     <div class="glass-card max-w-4xl mx-auto p-8 md:p-12 rounded-3xl relative z-10 mx-6 shadow-xl">
-        <h2 class="text-4xl font-bold mb-8 text-slate-800">Get In Touch</h2>
+        <h2 class="text-4xl font-bold mb-8 text-slate-800 text-center">Get In Touch</h2>
 
         <div class="grid md:grid-cols-2 gap-12 text-left">
+            
             <div class="space-y-6">
                 <div class="flex items-start space-x-4">
                     <div class="p-2 bg-sky-100 rounded-lg text-sky-600">
@@ -531,46 +531,35 @@
 
                 <div class="flex space-x-4 pt-4">
                     <a href="https://github.com/Parames-P" target="_blank"
-                        class="p-3 bg-slate-100 rounded-full hover:bg-slate-800 hover:text-white transition" title="GitHub">
+                        class="p-3 bg-slate-100 rounded-full hover:bg-slate-800 hover:text-white transition">
                         <i data-lucide="github" class="w-5 h-5"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/parameshwari-palanivel" target="_blank"
-                        class="p-3 bg-slate-100 rounded-full hover:bg-blue-600 hover:text-white transition" title="LinkedIn">
+                        class="p-3 bg-slate-100 rounded-full hover:bg-blue-600 hover:text-white transition">
                         <i data-lucide="linkedin" class="w-5 h-5"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="hidden md:flex flex-col justify-center">
-                <p class="text-slate-600 italic">
-                    "Open to new opportunities and collaborations. Feel free to reach out!"
-                </p>
+            <div>
+                <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" class="space-y-4">
+                    <input type="text" name="name" placeholder="Your Name" required
+                        class="w-full p-4 bg-white/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                    
+                    <input type="email" name="email" placeholder="Your Email" required
+                        class="w-full p-4 bg-white/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                    
+                    <textarea name="message" rows="4" placeholder="Your Message" required
+                        class="w-full p-4 bg-white/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition"></textarea>
+                    
+                    <button type="submit"
+                        class="w-full py-3 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-sky-500/30 transition transform hover:-translate-y-1">
+                        Send Message
+                    </button>
+                </form>
             </div>
-        </div>
-    </div>
-<div>
 
-               <form action="https://formspree.io/f/mdaanrlo" method="POST" class="space-y-4">
-    <input type="text" name="name" placeholder="Your Name" required
-        class="w-full p-4 bg-white/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
-    
-    <input type="email" name="email" placeholder="Your Email" required
-        class="w-full p-4 bg-white/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
-    
-    <textarea name="message" rows="4" placeholder="Your Message" required
-        class="w-full p-4 bg-white/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition"></textarea>
-    
-    <button type="submit"
-        class="w-full py-3 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-sky-500/30 transition transform hover:-translate-y-1">
-        Send Message
-    </button>
-</form>
-    </div>
-            <p class="mt-12 text-sm text-slate-400 border-t border-slate-200 pt-8">© 2026 Parameshwari. Created with ❤️.
-            </p>
-        </div>
-    </footer>
-
+        </div> </div> </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <script>
