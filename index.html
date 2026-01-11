@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameshwari | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        skyAccent: "#0ea5e9",
+                        deepBlue: "#0f172a",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            /* Sky Gradient Background */
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+            color: #1e293b;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Animated Background Orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            animation: float 10s infinite ease-in-out;
+            opacity: 0.6;
+            mix-blend-mode: multiply;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: #7dd3fc;
+            top: -100px;
+            left: -100px;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: #a5f3fc;
+            bottom: 0;
+            right: -50px;
+            animation-delay: 2s;
+        }
+
+        .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: #c7d2fe;
+            top: 40%;
+            left: 30%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(30px, 50px);
+            }
+        }
+
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+        }
+
+        .text-3d {
+            text-shadow: 3px 3px 0px rgba(14, 165, 233, 0.2);
+        }
+
+        /* 3D Frame Utilities */
+        .perspective-container {
+            perspective: 1000px;
+        }
+
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+
+        .translate-z-neg-50 {
+            transform: translateZ(-50px);
+        }
+
+        .translate-z-20 {
+            transform: translateZ(20px);
+        }
+
+        .translate-z-40 {
+            transform: translateZ(40px);
+        }
+
+        .translate-z-50 {
+            transform: translateZ(50px);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f0f9ff;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #7dd3fc;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9;
+        }
+    </style>
+</head>
+
+<body class="antialiased relative selection:bg-sky-200 selection:text-sky-900">
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 p-4">
+        <div class="glass-card max-w-6xl mx-auto rounded-full px-6 py-3 flex justify-between items-center shadow-lg">
+            <span class="text-2xl font-extrabold text-sky-600 tracking-tighter">P.</span>
+            <div class="space-x-6 hidden md:flex font-semibold text-sm tracking-wide text-slate-600">
+                <a href="#home" class="hover:text-sky-600 transition hover:scale-105 transform">Home</a>
+                <a href="#about" class="hover:text-sky-600 transition hover:scale-105 transform">About</a>
+                <a href="#services" class="hover:text-sky-600 transition hover:scale-105 transform">Services</a>
+                <a href="#experience" class="hover:text-sky-600 transition hover:scale-105 transform">Experience</a>
+                <a href="#projects" class="hover:text-sky-600 transition hover:scale-105 transform">Projects</a>
+                <a href="#contact"
+                    class="px-5 py-2 bg-gradient-to-r from-sky-500 to-blue-600 rounded-full text-white hover:shadow-lg hover:shadow-sky-500/30 transition transform hover:-translate-y-0.5">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative">
+        <div class="text-center px-4" data-aos="fade-up">
+
+            <div id="image-perspective-container"
+                class="relative w-64 h-64 mx-auto mb-10 group perspective-container cursor-pointer">
+                <div id="image-card-3d"
+                    class="w-full h-full relative transition-all duration-100 ease-out transform-style-3d">
+
+                    <div
+                        class="absolute inset-0 -z-20 bg-sky-400 rounded-full blur-3xl opacity-30 group-hover:opacity-60 transition duration-500 translate-z-neg-50">
+                    </div>
+
+                    <div
+                        class="absolute inset-[10px] z-10 rounded-full overflow-hidden border-4 border-white shadow-xl translate-z-20">
+                        <img src="https://github.com/Parames-P/Portfolio/blob/main/Parameshwari1.jpg?raw=true"
+                            alt="Parameshwari" class="w-full h-full object-cover">
+                    </div>
+
+                    <div
+                        class="absolute inset-0 z-20 rounded-full border-[8px] border-white/60 shadow-[inset_0_0_20px_rgba(255,255,255,0.5)] translate-z-40 pointer-events-none">
+                    </div>
+
+                    <div
+                        class="absolute inset-0 z-30 rounded-full bg-gradient-to-tr from-white/80 to-transparent opacity-0 group-hover:opacity-40 transition duration-500 translate-z-50 pointer-events-none">
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-black mb-4 tracking-tight text-3d text-slate-800">
+                Parameshwari
+            </h1>
+            <p class="text-lg text-sky-600 font-semibold mb-2">From Perambalur, India</p>
+
+            <p class="text-xl md:text-2xl text-slate-600 mb-8 max-w-2xl mx-auto font-light">
+                Java Full Stack Developer & Aspiring Engineer
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#projects"
+                    class="px-8 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition shadow-xl hover:shadow-2xl flex items-center gap-2">
+                    View Portfolio <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                </a>
+                <a href="https://drive.google.com/file/d/1aUUJG_SHaTUauQ6m3JZe7sRjE9ZORmSF/view?usp=drive_link"
+                    target="_blank" download
+                    class="px-8 py-3 bg-white text-slate-900 border border-slate-200 rounded-xl font-bold hover:bg-sky-50 transition shadow-lg flex items-center gap-2">
+                    Download CV <i data-lucide="download" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="glass-card p-8 rounded-3xl border-l-8 border-l-sky-500" data-tilt data-tilt-max="3"
+                    data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+                        <i data-lucide="user" class="text-sky-500"></i> About Me
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Hi! I'm a <span class="text-sky-600 font-bold">Java Full Stack Developer</span> who loves
+                        building websites and apps. I have experience with Java, Spring Boot, React, HTML, CSS, and SQL,
+                        and I enjoy creating easy-to-use and efficient solutions.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        I’ve worked on projects like surplus food management websites and student services platforms.
+                        I’m always excited to learn new things and work on creative ideas.
+                    </p>
+                </div>
+
+                <div class="space-y-6" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-slate-800">Education</h3>
+                    <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
+                        <div class="p-3 bg-sky-100 rounded-lg text-sky-600"><i data-lucide="graduation-cap"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">B.E Computer Science</h4>
+                            <p class="text-sm text-slate-500">M.A.M College Of Engineering (2021-2025)</p>
+                            <p class="text-sky-600 font-bold mt-1">CGPA: 8.5</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
+                        <div class="p-3 bg-sky-100 rounded-lg text-sky-600"><i data-lucide="school"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">HSC</h4>
+                            <p class="text-sm text-slate-500">Govt Higher Secondary School</p>
+                            <p class="text-sky-600 font-bold mt-1">Score: 86%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center text-slate-800" data-aos="fade-up">My Services</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-2xl text-center group hover:bg-white transition" data-tilt
+                    data-aos="zoom-in">
+                    <div
+                        class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600 group-hover:scale-110 transition">
+                        <i data-lucide="code" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Web App Development</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Building responsive, user-friendly web
+                        applications using Java, Spring Boot and React.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center group hover:bg-white transition" data-tilt
+                    data-aos="zoom-in" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 text-purple-600 group-hover:scale-110 transition">
+                        <i data-lucide="database" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Database Management</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Designing and optimizing databases with MySQL and
+                        MongoDB for efficient data management.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center group hover:bg-white transition" data-tilt
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-6 text-sky-600 group-hover:scale-110 transition">
+                        <i data-lucide="shopping-cart" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">E-Commerce Solutions</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Creating secure platforms with product management,
+                        inventory tracking, and payments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 bg-white/30 backdrop-blur-sm">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 text-center text-slate-800" data-aos="fade-up">Professional Journey</h2>
+            <div class="relative border-l-4 border-sky-200 ml-4 md:ml-0 space-y-12">
+
+                <div class="md:grid md:grid-cols-12 md:gap-8 items-start group relative">
+                    <div class="md:col-span-2 md:text-right mb-2 md:mb-0 pt-2" data-aos="fade-right">
+                        <span class="text-sky-600 font-bold block text-sm">6 Weeks</span>
+                    </div>
+                    <div
+                        class="absolute w-5 h-5 bg-white border-4 border-sky-500 rounded-full -left-[10.5px] top-2 md:left-auto md:right-auto md:relative md:col-span-1 md:mx-auto shadow-md">
+                    </div>
+                    <div class="md:col-span-9 pl-8 md:pl-0" data-aos="fade-left">
+                        <div class="glass-card p-6 rounded-2xl hover:shadow-xl transition">
+                            <h3 class="text-xl font-bold text-slate-800">Full Stack Developer Intern</h3>
+                            <p class="text-sky-600 font-medium text-sm mb-2">Mr. Cooper</p>
+                            <p class="text-slate-600 text-sm">Offline internship gaining full stack experience.
+                                Successfully led a team project on <span class="font-semibold text-slate-800">Surplus
+                                    Food Management</span>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:grid md:grid-cols-12 md:gap-8 items-start group relative">
+                    <div class="md:col-span-2 md:text-right mb-2 md:mb-0 pt-2" data-aos="fade-right">
+                        <span class="text-sky-600 font-bold block text-sm">Training</span>
+                    </div>
+                    <div
+                        class="absolute w-5 h-5 bg-white border-4 border-purple-500 rounded-full -left-[10.5px] top-2 md:left-auto md:right-auto md:relative md:col-span-1 md:mx-auto shadow-md">
+                    </div>
+                    <div class="md:col-span-9 pl-8 md:pl-0" data-aos="fade-left">
+                        <div class="glass-card p-6 rounded-2xl hover:shadow-xl transition">
+                            <h3 class="text-xl font-bold text-slate-800">Technical & Soft Skills Training</h3>
+                            <p class="text-purple-600 font-medium text-sm mb-2">TNS India Foundation</p>
+                            <p class="text-slate-600 text-sm">Completed Full Stack Java course. Focused on soft skills
+                                and technical skills, completing a project in <span
+                                    class="font-semibold text-slate-800">Student Service Management</span>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:grid md:grid-cols-12 md:gap-8 items-start group relative">
+                    <div class="md:col-span-2 md:text-right mb-2 md:mb-0 pt-2" data-aos="fade-right">
+                        <span class="text-sky-600 font-bold block text-sm">Online</span>
+                    </div>
+                    <div
+                        class="absolute w-5 h-5 bg-white border-4 border-pink-500 rounded-full -left-[10.5px] top-2 md:left-auto md:right-auto md:relative md:col-span-1 md:mx-auto shadow-md">
+                    </div>
+                    <div class="md:col-span-9 pl-8 md:pl-0" data-aos="fade-left">
+                        <div class="glass-card p-6 rounded-2xl hover:shadow-xl transition">
+                            <h3 class="text-xl font-bold text-slate-800">Web Developer Intern</h3>
+                            <p class="text-pink-600 font-medium text-sm mb-2">InternIQ</p>
+                            <p class="text-slate-600 text-sm">Developed multiple web applications including a countdown
+                                timer, currency converter, login page, and landing page.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:grid md:grid-cols-12 md:gap-8 items-start group relative">
+                    <div class="md:col-span-2 md:text-right mb-2 md:mb-0 pt-2" data-aos="fade-right">
+                        <span class="text-sky-600 font-bold block text-sm">20 Days</span>
+                    </div>
+                    <div
+                        class="absolute w-5 h-5 bg-white border-4 border-emerald-500 rounded-full -left-[10.5px] top-2 md:left-auto md:right-auto md:relative md:col-span-1 md:mx-auto shadow-md">
+                    </div>
+                    <div class="md:col-span-9 pl-8 md:pl-0" data-aos="fade-left">
+                        <div class="glass-card p-6 rounded-2xl hover:shadow-xl transition">
+                            <h3 class="text-xl font-bold text-slate-800">Web Developer Intern</h3>
+                            <p class="text-emerald-600 font-medium text-sm mb-2">Mercury Minds, Chennai</p>
+                            <p class="text-slate-600 text-sm">Developed a Company Management System using PHP, MySQL,
+                                and JavaScript.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center text-slate-800" data-aos="fade-down">Technical Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white transition" data-tilt>
+                    <h4 class="font-bold text-sky-600">Java & C</h4>
+                    <p class="text-xs text-slate-500">Languages</p>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white transition" data-tilt>
+                    <h4 class="font-bold text-sky-600">Spring Boot</h4>
+                    <p class="text-xs text-slate-500">Backend</p>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white transition" data-tilt>
+                    <h4 class="font-bold text-sky-600">React & JS</h4>
+                    <p class="text-xs text-slate-500">Frontend</p>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white transition" data-tilt>
+                    <h4 class="font-bold text-sky-600">MySQL</h4>
+                    <p class="text-xs text-slate-500">Database</p>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white transition" data-tilt>
+                    <h4 class="font-bold text-sky-600">HTML & CSS</h4>
+                    <p class="text-xs text-slate-500">Styling</p>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white transition" data-tilt>
+                    <h4 class="font-bold text-sky-600">GitHub</h4>
+                    <p class="text-xs text-slate-500">Version Control</p>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white transition" data-tilt>
+                    <h4 class="font-bold text-sky-600">Bootstrap</h4>
+                    <p class="text-xs text-slate-500">Framework</p>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white transition" data-tilt>
+                    <h4 class="font-bold text-sky-600">Problem Solving</h4>
+                    <p class="text-xs text-slate-500">Soft Skill</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-gradient-to-b from-transparent to-white/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-3 text-slate-800">
+                <i data-lucide="folder-git-2" class="text-sky-500"></i> My Portfolio
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-300"
+                    data-aos="fade-up">
+                    <div class="h-48 bg-slate-200 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-sky-900/10 group-hover:bg-transparent transition"></div>
+                        <img src="https://via.placeholder.com/400x200?text=Food+Management"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Surplus Food Management</h3>
+                        <p class="text-slate-600 text-sm mb-4">Platform to donate excess food to NGOs. Features food
+                            tracking, volunteering options, and real-time notifications.</p>
+                        <a href="#"
+                            class="text-sky-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition">View
+                            Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-slate-200 relative overflow-hidden">
+                        <img src="https://via.placeholder.com/400x200?text=Student+System"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Student Management System</h3>
+                        <p class="text-slate-600 text-sm mb-4">Designed to manage student profiles, attendance, and
+                            academic performance with a user-friendly dashboard.</p>
+                        <a href="#"
+                            class="text-sky-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition">View
+                            Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-slate-200 relative overflow-hidden">
+                        <img src="https://via.placeholder.com/400x200?text=Shopping+Cart"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Shopping Cart</h3>
+                        <p class="text-slate-600 text-sm mb-4">E-commerce platform for browsing and purchasing products
+                            with secure checkout and product filtering.</p>
+                        <a href="#"
+                            class="text-sky-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition">View
+                            Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-24 relative text-center">
+        <div class="glass-card max-w-4xl mx-auto p-8 md:p-12 rounded-3xl relative z-10 mx-6 shadow-xl">
+            <h2 class="text-4xl font-bold mb-8 text-slate-800">Get In Touch</h2>
+
+            <div class="grid md:grid-cols-2 gap-12 text-left">
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-slate-400 text-sm uppercase tracking-wider font-bold mb-1">Email</p>
+                        <a href="mailto:parameshwari29032004@gmail.com"
+                            class="text-lg text-slate-800 hover:text-sky-600 font-medium">parameshwari29032004@gmail.com</a>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-sm uppercase tracking-wider font-bold mb-1">Phone</p>
+                        <p class="text-lg text-slate-800">+91 82707 84694</p>
+                    </div>
+                    <div class="flex space-x-4 pt-4">
+                        <a href="https://github.com/Parames-P" target="_blank"
+                            class="p-3 bg-slate-100 rounded-full hover:bg-slate-800 hover:text-white transition"><i
+                                data-lucide="github" class="w-5 h-5"></i></a>
+                        <a href="https://www.linkedin.com/in/parameshwari-palanivel" target="_blank"
+                            class="p-3 bg-slate-100 rounded-full hover:bg-blue-600 hover:text-white transition"><i
+                                data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#"
+                            class="p-3 bg-slate-100 rounded-full hover:bg-pink-600 hover:text-white transition"><i
+                                data-lucide="instagram" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <form name="submit-to-google-sheet" class="space-y-4">
+                        <input type="text" name="Name" placeholder="Your Name" required
+                            class="w-full p-4 bg-white/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                        <input type="email" name="Email Id" placeholder="Your Email" required
+                            class="w-full p-4 bg-white/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                        <textarea name="Message" rows="4" placeholder="Your Message"
+                            class="w-full p-4 bg-white/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 transition"></textarea>
+                        <button type="submit"
+                            class="w-full py-3 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-sky-500/30 transition transform hover:-translate-y-1">Send
+                            Message</button>
+                    </form>
+                    <span id="msg" class="block mt-4 text-green-600 font-semibold text-center"></span>
+                </div>
+            </div>
+
+            <p class="mt-12 text-sm text-slate-400 border-t border-slate-200 pt-8">© 2026 Parameshwari. Created with ❤️.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+        lucide.createIcons();
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 10, speed: 400, glare: true, "max-glare": 0.2, scale: 1.02
+        });
+
+        // 3D Mouse Tracking
+        const heroContainer = document.getElementById('image-perspective-container');
+        const heroCard = document.getElementById('image-card-3d');
+        if (heroContainer && heroCard) {
+            heroContainer.addEventListener('mousemove', (e) => {
+                const rect = heroContainer.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const mouseX = e.clientX - centerX;
+                const mouseY = e.clientY - centerY;
+                heroCard.style.transform = `rotateX(${-mouseY * 0.2}deg) rotateY(${mouseX * 0.2}deg) translateX(${mouseX * 0.05}px) translateY(${mouseY * 0.05}px)`;
+            });
+            heroContainer.addEventListener('mouseleave', () => {
+                heroCard.style.transform = `rotateX(0deg) rotateY(0deg) translate(0,0)`;
+            });
+        }
+
+        // Google Sheets Form Script
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzh0YmRJ1-mn12x7_0nA3gFJVm38SW7gJRZGwUTBA6D-eg4ldNVZLHnhts7K4jBVIlK/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message Sent Successfully"
+                    setTimeout(function () { msg.innerHTML = "" }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
